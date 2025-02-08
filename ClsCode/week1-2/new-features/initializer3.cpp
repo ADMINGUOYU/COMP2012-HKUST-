@@ -8,7 +8,8 @@ int main()
     const char* s3 = {"Jeff Bezos"};
     const char s4[] = {'h', 'k', 'u', 's', 't', '\0'};
     const char s5[] {'h', 'k', 'u', 's', 't', '\0'};
-    const char* s6 {'h', 'k', 'u', 's', 't', '\0'};
+    const char* s6 {'h', 'k', 'u', 's', 't', '\0'}; // error: too many initializer valuesC/C++(146)
+    const char* c1 {'\0'};  // ok!
 
     cout << "s1 = " << s1 << endl;
     cout << "s2 = " << s2 << endl;

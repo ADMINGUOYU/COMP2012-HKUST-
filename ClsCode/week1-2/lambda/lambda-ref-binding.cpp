@@ -4,7 +4,9 @@ using namespace std;
 int main()	
 {
     int a = 1, b = 2, c = 3;
+    // type of f -> void f(int x)
     auto f = [&](int x) { a *= x; b += x; c = a + b; };
+    //void func(int x) = [&](int x) { a *= x; b += x; c = a + b; };   // error: function "func" may not be initializedC/C++(145)
     
     for (int k = 1; k < 3; f(k++))
         ;
@@ -17,4 +19,10 @@ int main()
 
     return 0;
 }
+
+// result:
+/*
+a = 2   b = 5   c = 7
+a = 22  b = 15  c = 37
+*/
 

@@ -8,8 +8,10 @@ int main()
     // Which of the following give(s) compilation error?
     cbr(x);
     cbcr(x);
-    cbr(y); 
+    // cannot bind a int& typed reference to const int type
+    cbr(y);     // error: qualifiers dropped in binding reference of type "int &" to initializer of type "const int"C/C++(433)
     cbcr(y);
-    cbr(1234); 
+    // same error -> 1234 is literal constant, cannot bind it to int& typed reference
+    cbr(1234);  // error: initial value of reference to non-const must be an lvalueC/C++(461)
     cbcr(1234);
 }

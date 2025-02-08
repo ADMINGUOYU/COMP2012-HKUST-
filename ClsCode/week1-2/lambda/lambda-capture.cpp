@@ -14,6 +14,8 @@ int main()
 
     for (int v : { 2, 5, 7, 10 }) // Only variable sum is captured
         cout << [&sum](int x) { return sum += a*x; } (v) << endl; // Error!
+        // an enclosing-function local variable cannot be referenced in a lambda body unless it is in the capture listC/C++(1735)
+        // int a
     cout << "sum = " << sum << endl;
 
     return 0;

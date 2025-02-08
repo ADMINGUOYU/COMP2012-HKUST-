@@ -7,6 +7,7 @@ class Date      // There are problems with this code; what are they?
 
   public:
     Date() { cin >> year >> month >> day; }
+    // std::istream std::cin not defined -> include <iostream> -> using namespace std;
     Date(int y, int m, int d) { year = y; month = m; day = d; }
 
     void add_month() { month += 1; }; // Will be an inline function

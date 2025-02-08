@@ -23,3 +23,25 @@ int main()
     Complex c(4, 5); c.add3(w).add3(w).print();   c.print();
     return 0;
 }
+
+// execution result:
+/*
+(4 , 5)
+(4 , 5)
+(4 , 5)
+
+
+(14 , 15)
+(14 , 15)
+(14 , 15)
+
+
+(24 , 25)
+(14 , 15) -> the second addition works on the TEMP object, it does not reflect on (a)
+
+(24 , 25)
+(24 , 25)
+
+(24 , 25)
+(24 , 25)
+*/
