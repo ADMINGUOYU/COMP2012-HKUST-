@@ -5,6 +5,6 @@ class Weird
     Weird() 
     { 
         height = 5; 
-        ::height = 5;   // this accesses the global variable
+        ::height = 5;   // this accesses the global variable (using :: scope operator)
     }
 };

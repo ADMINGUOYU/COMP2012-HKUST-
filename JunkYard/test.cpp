@@ -3,29 +3,21 @@
 // ********************************************* //
 
 #include <iostream>
+#include <cstring>      /* File: default-assign-bug.cpp */
+// note that <cstring> header is for function strlen()
 
-int main(int argc, char* argv[])
-{
-    int a = {1} ,b = {1} ,c = {1};
+class Word 
+{ 
+  private:
+    int frequency; char* str; 
 
-    auto lambda = [a,b,c](void)->void
-        {
-            a++;
-            std::cout << "a = " << a << std::endl;
-            std::cout << "b = " << b << std::endl;
-            std::cout << "c = " << c << std::endl;
-        };
+  public:
+    Word() : frequency(0), str(nullptr) { }
+    Word(const char* s, int k = 0): frequency(k) 
+	    { str = new char [strlen(s)+1]; strcpy(str, s); }
+    ~Word() { std::cout << "delete: " << this->str << std::endl; delete [] str; }
+};
 
-    lambda();
+void Bug(Word& x) { Word bug("bug", 4); x = bug; }
 
-    for(int i : {1, 4, 22, 19})
-    {
-        a += i;
-        b *= i;
-        c = a * b;
-    }
-    
-    lambda();
-
-    return 0;
-}
+int main() { Word movie {"Titanic"}; Bug(movie); return 0; }

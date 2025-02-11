@@ -21,6 +21,34 @@ int main()
     Complex a(4, 5); a.add1(w).add1(w).print();   a.print(); cout << endl;
     Complex b(4, 5); b.add2(w)->add2(w)->print(); b.print(); cout << endl;
     Complex c(4, 5); c.add3(w).add3(w).print();   c.print();
+
+    /*
+    Complex val1(1.0f, 2.0f);
+    Complex val2(0.0f, 0.0f);
+    Complex& ref1 = val1.add1(val2); 
+    // error: initial value of reference to non-const must be an lvalue C/C++(461)
+    // Complex val1
+    -> means the object returned by add1 is NOT a valid lvalue -> it is a temp object and camnot be attached to a reference
+    */
+
+    /*
+    Complex val1(1.0f, 2.0f);
+    Complex val2(0.0f, 0.0f);
+    Complex* ptr = &val1.add1(val2); 
+    ptr->print();
+    // error: taking address of rvalue [-fpermissive]
+    // 42 |     Complex* ptr = &val1.add1(val2);
+    //    |               
+    // the TEMP object returned by add1 is regarded as rvalue (not a valid lvalue)
+    */
+
+    /* THIS IS OK!
+    Complex val1(1.0f, 2.0f);
+    Complex val2(0.0f, 0.0f);
+    Complex* ptr = &val1.add3(val2); 
+    ptr->print();
+    */
+
     return 0;
 }
 

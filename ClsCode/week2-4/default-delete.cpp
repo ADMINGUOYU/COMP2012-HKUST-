@@ -16,8 +16,9 @@ class Word
 };
 int main()
 {
-    Word x; x.print();
+    Word x; x.print();  // because 'Word() = default', Word x can call that constructor
     Word y("good", 3); y.print();
     Word z(y);      // Error: call to deleted constructor of 'Word'
+    // error: function "Word::Word(const Word &w)" (declared at line 10) cannot be referenced -- it is a deleted functionC/C++(1776)
 }
 
