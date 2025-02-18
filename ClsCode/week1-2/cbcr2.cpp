@@ -15,3 +15,9 @@ int main()
     cbr(1234);  // error: initial value of reference to non-const must be an lvalueC/C++(461)
     cbcr(1234);
 }
+
+// OK!
+const int& const_ref_to_literal_constant = 1234;
+// NOT OK!
+int& const_ref_to_literal = 1234;
+// error: initial value of reference to non-const must be an lvalue C/C++(461)

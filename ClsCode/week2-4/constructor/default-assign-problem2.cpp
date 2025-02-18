@@ -23,3 +23,20 @@ int main()
     Word z("cat", 2); z.print(); // Conversion constructor
     z = x;            z.print(); // Default assignment operator
 }
+
+
+/*
+Result;
+May work as const char* conversion
+rat : 1 ; 0x57a9bf355eb0                <-
+                                         |
+Copy                                     |
+rat : 1 ; 0x57a9bf3562e0                 |
+                                          > PROBLEM
+May work as const char* conversion       |
+cat : 2 ; 0x57a9bf356300                 |
+rat : 1 ; 0x57a9bf355eb0                <-
+
+!!! memory LEAK! ONLY on line 24 -> the copy constructor works fine
+-> it is the assignment operator= that fails (member-wise assignment no longer works)
+*/

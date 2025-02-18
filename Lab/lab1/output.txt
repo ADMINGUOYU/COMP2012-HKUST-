@@ -1,0 +1,38 @@
+Adding employee Alice...
+Employee Alice is hired
+Adding employee Bob...
+Employee Bob is hired
+Adding employee Cindy...
+Employee Cindy is hired
+Adding employee Dave...
+Company is full
+
+Adding employee Bob again...
+Employee Bob already exists in the company
+
+Firing Frank...
+Employee Frank is not found in the company
+
+Company with 3 employees:
+    [Name: Alice, Title: Engineer, Gender: F, Salary: 30000]
+    [Name: Bob, Title: Engineer, Gender: M, Salary: 32000]
+    [Name: Cindy, Title: Manager, Gender: F, Salary: 40000]
+
+Firing Bob...
+Employee Bob is fired
+
+Promoting Bob to Senior Engineer...
+Employee Bob is not found in the company
+
+Promoting Cindy to Senior Engineer...
+Employee Cindy is promoted to Senior Engineer
+
+Adjusting salary of Alice by -500...
+Employee Alice's salary is changed by -500
+
+Adjusting salary of Bob by 1000...
+Employee Bob is not found in the company
+
+Company with 2 employees:
+    [Name: Alice, Title: Engineer, Gender: F, Salary: 29500]
+    [Name: Cindy, Title: Senior Engineer, Gender: F, Salary: 40000]

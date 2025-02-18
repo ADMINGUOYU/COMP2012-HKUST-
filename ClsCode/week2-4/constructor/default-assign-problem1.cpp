@@ -23,3 +23,17 @@ int main()
     Word z("cat"); z.print();     // Conversion constructor
     z = x;         z.print();     // Default assignment operator
 }
+
+/*
+Result:
+May work as const char* conversion
+rat : 1 ; 0x7ffd01425a74
+
+Copy
+rat : 1 ; 0x7ffd01425ae4
+
+May work as const char* conversion
+cat : 1 ; 0x7ffd01425b54
+rat : 1 ; 0x7ffd01425b54
+
+*/

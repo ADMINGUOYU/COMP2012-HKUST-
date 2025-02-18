@@ -13,14 +13,24 @@ class Word
     void print() const { cout << str << " : " << frequency << endl; }
     Word to_upper_case() const 
     {
-        Word x(*this);
+        Word x(*this);  //copy constructor called
         for (char* p = x.str; *p != '\0'; p++) *p += 'A' - 'a';
         return x;
     }
 };
 int main()
 {
-    Word movie {"titanic"}; movie.print();
-    Word song = movie.to_upper_case(); song.print();
+    Word movie {"titanic"};   //conversion constructor called
+    movie.print();
+    Word song = movie.to_upper_case();  // copy(to song) + copy(to temp object)
+    song.print();
 }
 
+/*
+compiler optimization:
+the object meant to be created in line 16 and line 25 is optimized by compiler,
+so copy is only done by ONCE and directly to the final destination -> variable 'song'
+the copy constructor is called (triggered) at the first time of copy (in this case at line 16)
+
+!! use flag: '-fno-elide-constructors' to disable this feature -> GNU g++
+*/

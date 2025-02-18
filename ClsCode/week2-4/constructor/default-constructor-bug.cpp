@@ -5,3 +5,6 @@ class Word              /* File: default-constructor-bug.cpp */
 };
 
 int main() { Word movie; }	// which constructor?
+// error: no default constructor exists for class "Word"C/C++(291)
+//        Word movie
+//        which constructor?
