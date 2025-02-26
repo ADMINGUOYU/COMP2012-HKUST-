@@ -1,0 +1,61 @@
+Creating students...
+Student: Alice initialized!
+Student: Bob initialized!
+Student: Charlie initialized!
+Student: David initialized!
+
+Creating classes...
+Class: COMP 2012 created with capacity 2.
+Class: MATH 1014 created with capacity 3.
+
+Enrolling students in COMP 2012...
+Student Alice enrolled in class COMP 2012.
+Student Bob enrolled in class COMP 2012.
+
+Attempting to enroll Charlie in COMP 2012 (should fail)...
+Class COMP 2012 is full. Cannot enroll student!
+
+Enrolling students in MATH 1014...
+Student Charlie enrolled in class MATH 1014.
+Student David enrolled in class MATH 1014.
+
+Listing students in COMP 2012:
+Students in class COMP 2012:
+- Alice
+- Bob
+
+Listing classes for Alice:
+Classes for student Alice:
+- COMP 2012
+
+Attempting to drop Charlie from COMP 2012 (should fail)...
+Student Charlie is not in class COMP 2012.
+
+Dropping Bob from COMP 2012...
+Student Bob dropped from class COMP 2012.
+
+Listing students in COMP 2012 after dropping Bob:
+Students in class COMP 2012:
+- Alice
+
+Listing classes for Bob:
+Student: Bob is not enrolled in any classes.
+
+Deleting Charlie while enrolled in MATH 1014...
+Student Charlie dropped from class MATH 1014.
+Student: Charlie destroyed!
+
+Listing students in MATH 1014 after deleting Charlie:
+Students in class MATH 1014:
+- David
+
+Cleaning up remaining memory...
+Student Alice dropped from class COMP 2012.
+Student: Alice destroyed!
+Student: Bob destroyed!
+Student David dropped from class MATH 1014.
+Student: David destroyed!
+Class: COMP 2012 destroyed.
+Class: MATH 1014 destroyed.
+
+Program execution complete!

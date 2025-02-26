@@ -15,7 +15,7 @@ class Postoffice
     Clock clock;
   public:
     Postoffice()
-        { cout << "Postoffice Constructor\n"; clock = Clock(800); }
+        { cout << "Postoffice Constructor\n"; clock = Clock(800); /*the destructor is called here for the TEMP object -> before the '}' -> right after we don't have access to it*/ }
     ~Postoffice() { cout << "Postoffice Destructor\n"; }
 };
 
