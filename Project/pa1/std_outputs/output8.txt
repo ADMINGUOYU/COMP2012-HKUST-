@@ -1,0 +1,20 @@
+Test case 8 selected
+Book 'The Great Gatsby' added to the library.
+Book '1984' added to the library.
+Book 'To Kill a Mockingbird' added to the library.
+Book 'Great Expectations' added to the library.
+
+Rating updated for Book 2. New rating: 5
+Rating must be between 0 and 5.
+Rating updated for Book 1. New rating: 0
+Rating updated for Book 2. New rating: 3
+Rating updated for Book 1. New rating: 4
+Rating updated for Book 1. New rating: 4.5
+Rating updated for Book 3. New rating: 2
+
+Books sorted in ascending order of ratings: 
+Library Book Details:
+ID: 4 - Title: Great Expectations - Author: Charles Dickens - Rating: 0
+ID: 3 - Title: To Kill a Mockingbird - Author: Harper Lee - Rating: 2
+ID: 2 - Title: 1984 - Author: George Orwell - Rating: 3
+ID: 1 - Title: The Great Gatsby - Author: F. Scott Fitzgerald - Rating: 4.5

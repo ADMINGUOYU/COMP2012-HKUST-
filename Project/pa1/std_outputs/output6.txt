@@ -1,0 +1,31 @@
+Test case 6 selected
+Book 'The Great Gatsby' added to the library.
+Book '1984' added to the library.
+Book 'To Kill a Mockingbird' added to the library.
+Book 'Great Expectations' added to the library.
+Book 'Pride and Prejudice' added to the library.
+Book 'The Catcher in the Rye' added to the library.
+There are 17 books in the library.
+
+Successfully borrowed: The Great Gatsby
+Successfully borrowed: 1984
+Successfully borrowed: 1984
+Successfully borrowed: Great Expectations
+This book is currently unavailable.
+
+Rating updated for Book 2. New rating: 5
+Rating must be between 0 and 5.
+Rating updated for Book 1. New rating: 0
+Rating updated for Book 5. New rating: 2
+Rating updated for Book 2. New rating: 3
+Rating updated for Book 1. New rating: 4
+Rating updated for Book 3. New rating: 2.5
+
+There are 13 books in the library. They are:
+Library Book Details:
+ID: 1 - Title: The Great Gatsby - Author: F. Scott Fitzgerald - Rating: 4
+ID: 2 - Title: 1984 - Author: George Orwell - Rating: 3
+ID: 3 - Title: To Kill a Mockingbird - Author: Harper Lee - Rating: 2.5
+ID: 4 - Title: Great Expectations - Author: Charles Dickens - Rating: 0
+ID: 5 - Title: Pride and Prejudice - Author: Jane Austen - Rating: 2
+ID: 6 - Title: The Catcher in the Rye - Author: J.D Salinger - Rating: 0

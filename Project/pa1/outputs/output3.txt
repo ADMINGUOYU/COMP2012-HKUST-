@@ -1,0 +1,27 @@
+Test case 3 selected
+Book 'The Great Gatsby' added to the library.
+Book '1984' added to the library.
+Book 'To Kill a Mockingbird' added to the library.
+Book 'Great Expectations' added to the library.
+
+Initially Alice has 0 books
+Initially Bob has 0 books
+
+Successfully borrowed: The Great Gatsby
+Successfully borrowed: 1984
+Successfully borrowed: To Kill a Mockingbird
+Successfully borrowed: Great Expectations
+After borrowing books:
+
+Alice borrowed 2 books.
+Alice's Borrowed Books:
+The Great Gatsby (x1)
+1984 (x1)
+
+Bob borrowed 2 books.
+Bob's Borrowed Books:
+To Kill a Mockingbird (x1)
+Great Expectations (x1)
+
+Charlie borrowed 0 books.
+Charlie has not borrowed any books.

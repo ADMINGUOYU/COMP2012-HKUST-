@@ -1,0 +1,19 @@
+Test case 5 selected
+User ID: 1, Name: Bob, Borrowed Books: 0, Max Books: 5
+Book 'The Great Gatsby' added to the library.
+
+Initially Bob has 0 books
+
+Successfully borrowed: The Great Gatsby
+Successfully borrowed: The Great Gatsby
+Successfully borrowed: The Great Gatsby
+Successfully borrowed: The Great Gatsby
+Successfully borrowed: The Great Gatsby
+You cannot borrow more books.
+After borrowing books:
+Bob borrowed 5 books.
+
+Successfully returned: The Great Gatsby
+After returning 1 book:
+Bob borrowed 4 books.Bob's Borrowed Books:
+The Great Gatsby (x4)

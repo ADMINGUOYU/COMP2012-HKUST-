@@ -1,0 +1,12 @@
+Test case 2 selected
+Total Revenue before adding books: $10
+Book 'The Great Gatsby' added to the library.
+Book '1984' added to the library.
+Book 'To Kill a Mockingbird' added to the library.
+Book 'Great Expectations' added to the library.
+Total Revenue after adding books: $2
+Library Book Details:
+ID: 1 - Title: The Great Gatsby - Author: F. Scott Fitzgerald - Rating: 0
+ID: 2 - Title: 1984 - Author: George Orwell - Rating: 0
+ID: 3 - Title: To Kill a Mockingbird - Author: Harper Lee - Rating: 0
+ID: 4 - Title: Great Expectations - Author: Charles Dickens - Rating: 0

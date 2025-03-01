@@ -1,0 +1,25 @@
+Test case 10 selected
+Initial Library Revenue: $0
+Book 'The Great Gatsby' added to the library.
+
+Initially Bob has 0 books
+
+Successfully borrowed: The Great Gatsby
+Successfully borrowed: The Great Gatsby
+Successfully borrowed: The Great Gatsby
+Successfully borrowed: The Great Gatsby
+Successfully borrowed: The Great Gatsby
+You cannot borrow more books.
+
+After borrowing books:
+Bob borrowed 5 books.
+Total Revenue before adding slots: $3
+Max books updated to: 7
+User ID 1 upgraded by 2 slots.
+Successfully borrowed: The Great Gatsby
+Successfully borrowed: The Great Gatsby
+You cannot borrow more books.
+
+Bob's Borrowed Books:
+The Great Gatsby (x7)
+Total Revenue after adding slots: $5
