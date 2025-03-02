@@ -235,7 +235,7 @@ void BookList::sortBooks(SortCriteria criteria)
         while (nullptr != workingPtr_unsorted_head)
         {
             //while inside this loop, there is/are unsorted node(s)
-            if (workingPtr_sorted_tail->data->getTitle().c_str()[0] <= workingPtr_unsorted_head->data->getTitle().c_str()[0])
+            if (workingPtr_sorted_tail->data->getTitle() <= workingPtr_unsorted_head->data->getTitle())
             {
                 //we shall add the unsorted node to the end
                 //if fact, the unsorted node is behind the sorted_tail
@@ -243,7 +243,7 @@ void BookList::sortBooks(SortCriteria criteria)
                 workingPtr_unsorted_head = workingPtr_unsorted_head->next;
                 workingPtr_sorted_tail = workingPtr_sorted_tail->next;
             }
-            else if (workingPtr_sorted_head->data->getTitle().c_str()[0] > workingPtr_unsorted_head->data->getTitle().c_str()[0])
+            else if (workingPtr_sorted_head->data->getTitle() > workingPtr_unsorted_head->data->getTitle())
             {
                 //we shall add the unsorted node to the head
                 Node* toSort = workingPtr_unsorted_head;
@@ -270,7 +270,7 @@ void BookList::sortBooks(SortCriteria criteria)
                 workingPtr_unsorted_head = end->next;
 
                 Node* tmp = start;
-                while (tmp->next->data->getTitle().c_str()[0] <= toSort->data->getTitle().c_str()[0]) tmp = tmp->next;
+                while (tmp->next->data->getTitle() <= toSort->data->getTitle()) tmp = tmp->next;
                 toSort->next = tmp->next;
                 tmp->next = toSort;
             }

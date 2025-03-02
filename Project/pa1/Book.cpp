@@ -96,6 +96,8 @@ void Book::addRating(double newRating)
         this->rating = ((this->rating * this->ratingCount) + newRating) / (this->ratingCount + 1);
         this->ratingCount++;
     }
+
+    //prints message
     std::cout
         << "Rating updated for Book " << this->bookId << ". "
         << "New rating: " << this->rating
