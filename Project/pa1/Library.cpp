@@ -73,7 +73,11 @@ void Library::upgradeUserSlots(int userId, int additionalSlots)
     //find that user first
     User* target = this->getUserById(userId);
 
-    if (nullptr == target) return; //not found
+    if (nullptr == target) //not found
+    {
+        std::cout << "User ID " << userId << " not found." << std::endl;
+        return;
+    }
 
     //add slots
     target->updateMaxBooks(additionalSlots);
@@ -140,6 +144,12 @@ For each new book added, the library needs to pay 2 dollars.
 */
 void Library::addNewBook(Book *book)
 {
+    if (2 > this->totalRevenue) //Insufficient funds
+    {
+        std::cout << "Insufficient funds to add the book [" << book->getTitle() << "]." << std::endl;
+        return;
+    }
+
     this->libraryInventory.insertBook(book);
     this->totalRevenue -=2;
     std::cout << "Book '" << book->getTitle() << "' added to the library." << std::endl;
@@ -153,6 +163,11 @@ For <each book> removed, the library earns back 1 dollar.
 void Library::removeBook(int bookId)
 {
     Book* bookPtr = this->libraryInventory.searchList(bookId);
+    if (nullptr == bookPtr) //not found
+    {
+        std::cout << "Book with ID " << bookId << " not found in the library." << std::endl;
+        return;
+    }
     int count = bookPtr->getInventoryCount();
     for (int i = 0; i < count; i++)
     {

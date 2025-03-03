@@ -146,6 +146,12 @@ The function should display the Book object's ID, title, author name, and rating
 */
 void BookList::displayBooks() const
 {
+    if (nullptr == this->head)
+    {
+        std::cout << "The book list is empty." << std::endl;
+        return;
+    }
+
     Node* tmp = this->head;
     while (nullptr != tmp)
     {
@@ -327,7 +333,20 @@ to let the user if the book exists and what its new rating is.
 void BookList::rateBook(int bookId, double newRating)
 {
     Book* book_to_rate = this->searchList(bookId);
-    if (nullptr != book_to_rate) book_to_rate->addRating(newRating);
+    if (nullptr != book_to_rate) 
+    {
+        book_to_rate->addRating(newRating);
+        
+        //prints message
+        std::cout
+        << "Rating updated for Book " << book_to_rate->getId() << ". "
+        << "New rating: " << book_to_rate->getRating()
+        << std::endl;
+    }
+    else
+    {
+        std::cout << "Book with ID " << bookId << " not found." << std::endl;
+    }
     return;
 }
 
@@ -336,6 +355,12 @@ To retrieve the book from the BookList with the highest rating.
 */
 Book *BookList::getBookWithMaxRating() const
 {
+    if (nullptr == this->head)
+    {
+        std::cout << "The book list is empty." << std::endl;
+        return nullptr;
+    }
+
     Node* tmp = this->head;
     int highRating = tmp->data->getRating();
     Book* toReturn = tmp->data;
@@ -356,6 +381,12 @@ To retrieve the book from the BookList with the lowest rating.
 */
 Book *BookList::getBookWithMinRating() const
 {
+    if (nullptr == this->head)
+    {
+        std::cout << "The book list is empty." << std::endl;
+        return nullptr;
+    }
+
     Node* tmp = this->head;
     int lowRating = tmp->data->getRating();
     Book* toReturn = tmp->data;

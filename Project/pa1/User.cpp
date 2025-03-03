@@ -90,7 +90,11 @@ void User::returnBook(Book *book)
             break;
         }
     }
-    if (-1 == place_in_arr) return; //book not borrowed
+    if (-1 == place_in_arr) //book not borrowed
+    {
+        std::cout << "This book was not borrowed by you." << std::endl;
+        return;
+    }
 
     //shink the array
     for (int i = place_in_arr; i < this->numBooksBorrowed - 1; i++) this->booksBorrowed[i] = this->booksBorrowed[i + 1];
@@ -219,7 +223,11 @@ The maximum number of books can only increase and never decrease.
 */
 void User::updateMaxBooks(int additionalSlots)
 {
-    if (additionalSlots <= 0) return;
+    if (additionalSlots <= 0)
+    {
+        std::cout << "Invalid number of additional slots." << std::endl;
+        return;
+    }
     this->maxBooks += additionalSlots;
     std::cout << "Max books updated to: " << this->maxBooks << std::endl;
     return;
