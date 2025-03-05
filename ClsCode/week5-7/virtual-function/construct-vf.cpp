@@ -18,3 +18,13 @@ int main() {
     cout << "Derived-class object created" << endl;
     p->f();
 }
+
+/*
+output:
+
+Base's constructor
+Base::f()                       <- at this point, the derived object does NOT exist
+Derived's constructor
+Derived-class object created
+Derived::f()                    <- st this point, the derived object is fully initialized
+*/
