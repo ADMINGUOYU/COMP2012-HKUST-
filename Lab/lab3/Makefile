@@ -3,7 +3,7 @@ OBJS	= $(SRCS:.cpp=.o)
 DEPS	= $(OBJS:.o=.d)
 
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -g
+CXXFLAGS = -std=c++11 -Wall -g -fsanitize=address,leak,undefined
 
 ifeq ($(OS),Windows_NT)
 	EXEC = lab3.exe

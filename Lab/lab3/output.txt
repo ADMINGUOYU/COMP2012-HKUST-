@@ -1,0 +1,39 @@
+[Creation] Vehicle AB1234 (Sedan).
+[Creation] Vehicle XY789 (SUV).
+[Creation] Vehicle CD5678 (Van).
+[Creation] Parking Lot East Wing
+[Creation] Empty ParkingSpot A-01
+[Creation] Empty ParkingSpot A-02
+[Creation] Empty ParkingSpot B-01
+[Creation] Empty ParkingSpot B-02
+[Park] Vehicle AB1234 in spot A-01
+[Park] Vehicle XY789 in spot B-01
+Spot A-01 is already occupied.
+Vehicle AB1234 is already parked in spot A-01.
+Spot B-03 not found in East Wing
+[CopyCreation] Parking Lot East Wing
+[Creation] ParkingSpot A-01 with vehicle AB1234
+[Creation] Empty ParkingSpot A-02
+[Creation] ParkingSpot B-01 with vehicle XY789
+[Creation] Empty ParkingSpot B-02
+Vehicle AB1234 is already parked in spot A-01.
+[Park] Vehicle CD5678 in spot A-02
+[Remove] Vehicle XY789 from spot B-01
+Spot B-02 is already empty.
+Spot C-02 not found in West Wing
+========================================
+Parking Lot East Wing
+0. A-01 - AB1234
+1. A-02 - Empty
+2. B-01 - XY789
+3. B-02 - Empty
+========================================
+========================================
+Parking Lot West Wing
+0. A-01 - AB1234
+1. A-02 - CD5678
+2. B-01 - Empty
+3. B-02 - Empty
+========================================
+[Destructor] Parking Lot West Wing
+[Destructor] Parking Lot East Wing
