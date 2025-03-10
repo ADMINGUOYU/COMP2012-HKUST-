@@ -2,4 +2,11 @@
 using namespace std;
 template <class T> T* create() { return new T; };
 template <class T> void f() { T a; cout << a << endl; }
-int main() { create(); f(); }
+int main() { 
+    create(); 
+    f(); 
+
+    //the followings are valid
+    create<int>();
+    f<int>();
+}
