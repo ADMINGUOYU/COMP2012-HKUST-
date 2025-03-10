@@ -192,6 +192,66 @@ void User::viewBorrowedBooks() const
     }
     return;
 }
+/*
+Another way to write this function
+*/
+/*
+void User::viewBorrowedBooks() const
+{
+    // if no book is borrowed
+    if (!this->numBooksBorrowed)
+    {
+        std::cout << name << " has not borrowed any books." << std::endl;
+        return;
+    }
+
+    // set variables
+    const int maxBooks = 100;
+    int counts[maxBooks] = {0};
+    string uniqueBooks[maxBooks] = {};
+    bool found = false;
+    int uniqueCount = 0;
+
+    // begin iteration
+    for (int i = 0; i < this->numBooksBorrowed; i++)
+    {
+        for (int j = 0; j < uniqueCount; j++)
+        {
+            // if found
+            if (uniqueBooks[j] == this->booksBorrowed[i]->getTitle())
+            {
+                // update flag
+                found = true;
+                // increment that count number
+                counts[j]++;
+                break;
+            }
+        }
+        if (found)
+        {
+            found = false;
+            continue;
+        }
+        else
+        {
+            // if not found
+            uniqueBooks[uniqueCount] = this->booksBorrowed[i]->getTitle();
+            counts[uniqueCount]++;
+            uniqueCount++;
+        }
+    }
+    // begin print
+    std::cout << name << "'s Borrowed Books:" << std::endl;
+    for (int i = 0; i < uniqueCount; i++)
+    {
+        std::cout
+            << uniqueBooks[i]
+            << " (x" << counts[i] << ")"
+            << std::endl;
+    }
+    return;
+}
+*/
 
 /*
 The function to allow the user to give a rating to a book in the book list using its bookId. 
