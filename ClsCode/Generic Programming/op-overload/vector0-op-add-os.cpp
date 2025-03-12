@@ -17,3 +17,10 @@ int main()
     cout << "scalar + vector: 8.2 + a = " << 8.2 + a << endl;
     return 0;
 }
+
+/*
+OUTPUT:
+vector + vector: a + b = (4.4, 6.6)
+vector + scalar: b + 1.0 = (4.3, 4.4)
+scalar + vector: 8.2 + a = (9.3, 2.2)
+*/

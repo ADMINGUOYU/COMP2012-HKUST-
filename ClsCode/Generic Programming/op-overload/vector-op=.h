@@ -5,6 +5,8 @@ class Vector
   public:
     Vector(double a = 0, double b = 0) : x(a), y(b) { }
     const Vector& operator=(const Vector& b);
+    // actually compiled into :
+    // const Vector& operator= (Vector* this, const Vector& b);
   private:
     double x, y;
 };

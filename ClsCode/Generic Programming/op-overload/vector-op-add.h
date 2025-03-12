@@ -6,6 +6,8 @@ class Vector
     double getx() const { return x; }
     double gety() const { return y; }
     Vector operator+(const Vector& b) const;
+    // actually compiled into :
+    // Vector operator+ (const Vector* this, const Vector& b);
     const Vector& operator+=(const Vector& b);
   private:
     double x, y;

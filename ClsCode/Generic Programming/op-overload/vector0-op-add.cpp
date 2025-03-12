@@ -17,3 +17,10 @@ int main()
     d.print();
     return 0;
 }
+
+/*
+OUTPUTS:
+vector + vector: a + b + c = (18, 10)
+vector + scalar: b + 1.0 = (-4, 7)
+scalar + vector: 8.2 + a = (9.2, 3)
+*/
