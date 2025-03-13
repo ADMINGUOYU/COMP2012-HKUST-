@@ -1,0 +1,32 @@
+=== Creating Zoo ===
+
+=== Testing Empty Zoo ===
+The zoo currently has no animals.
+
+=== Creating Animals ===
+Tiger (age 5) is created.
+Penguin (age 2) is created.
+Elephant (age 8) is created.
+Lion (age 6) is created.
+
+=== Testing Animal Addition ===
+
+--- Adding animals within capacity ---
+Added animal Tiger to indoor exhibit Tropical House (warm and humid environment)
+Added animal Penguin to outdoor exhibit Arctic Zone (area: 3000 square meters)
+Added animal Elephant to indoor exhibit Tropical House (warm and humid environment)
+Current animals in the zoo:
+Tiger, Penguin, Elephant, 
+
+--- Testing capacity limit ---
+Zoo is full. Cannot add more animals.
+
+=== Testing Animal Removal ===
+Removed animal: Tiger
+Animal Giraffe not found in the zoo.
+Current animals in the zoo:
+Penguin, Elephant, 
+
+=== Testing Addition After Removal ===
+Current animals in the zoo:
+Penguin, Elephant, 

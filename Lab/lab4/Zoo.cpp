@@ -8,14 +8,23 @@ using namespace std;
 
 // TODO 4.1: complete the constructor of Zoo
 // Initialize the zoo with the specified maximum number of animals
-Zoo::Zoo(int max_animals) {
-   
+Zoo::Zoo(int max_animals) 
+    :
+    animals(nullptr),
+    max_animals(max_animals),
+    num_animals(0)
+{
+    // allocate some memory for the dynamic array
+    this->animals = new Animal*[this->max_animals] { 0 };
+    return;
 }
 
 // TODO 4.2: complete the destructor of Zoo
 // Clean up any dynamically allocated memory if necessary
-Zoo::~Zoo() {
-   
+Zoo::~Zoo() 
+{
+    delete [] (this->animals);
+    return;
 }
 
 // TODO 4.3: complete Zoo::add_to_indoor() and Zoo::add_to_outdoor()
@@ -23,38 +32,60 @@ Zoo::~Zoo() {
 
 bool Zoo::add_animal_to_indoor(Animal* animal, IndoorExhibit* exhibit) {
    
-    cout << "Zoo is full. Cannot add more animals." << endl;
-      
-  
-  
-    cout << "Added animal " << animal->get_name() 
-         << " to indoor exhibit " << animal->get_exhibit()->get_name()
-         << " (" << exhibit->get_climate_type() << " environment)" << endl;
+    if (this->max_animals <= this->num_animals)
+    {
+        std::cout << "Zoo is full. Cannot add more animals." << std::endl;
+        return false;
+    }
     
+    this->animals[this->num_animals++] = animal;
+    animal->set_exhibit(exhibit);   // set exhibit
+
+    // prints message
+    std::cout << "Added animal " << animal->get_name() 
+        << " to indoor exhibit " << animal->get_exhibit()->get_name()
+        << " (" << exhibit->get_climate_type() << " environment)" << std::endl;
+    
+    return true;
 }
 
 bool Zoo::add_animal_to_outdoor(Animal* animal, OutdoorExhibit* exhibit) {
 
-    cout << "Zoo is full. Cannot add more animals." << endl;
+    if (this->max_animals <= this->num_animals)
+    {
+        std::cout << "Zoo is full. Cannot add more animals." << std::endl;
+        return false;
+    }
     
+    this->animals[this->num_animals++] = animal;
+    animal->set_exhibit(exhibit);   // set exhibit
 
-    cout << "Added animal " << animal->get_name() 
+    std::cout << "Added animal " << animal->get_name() 
          << " to outdoor exhibit " << animal->get_exhibit()->get_name()
-         << " (area: " << exhibit->get_area() << " square meters)" << endl;
+         << " (area: " << exhibit->get_area() << " square meters)" << std::endl;
     
+    return true;
 }
 
 
 // TODO 4.4: complete Zoo::remove_animal()
 // Remove an animal from the zoo by name
-bool Zoo::remove_animal(const string& name) {
-   
-    
-    cout << "Removed animal: " << name << endl;
-   
-    
-    cout << "Animal " << name << " not found in the zoo." << endl;
-   
+bool Zoo::remove_animal(const string& name) 
+{
+    for (int i = 0; i < this->num_animals; i++)
+    {
+        if (this->animals[i]->get_name() == name)
+        {
+            for (int j = i; j < (this->num_animals - 1); j++)
+                this->animals[j] = this->animals[j + 1];
+            this->animals[--this->num_animals] = nullptr;
+            std::cout << "Removed animal: " << name << std::endl;
+            return true;
+        }
+    }
+
+    std::cout << "Animal " << name << " not found in the zoo." << std::endl;
+    return false;
 }
 
 void Zoo::print_all_animals() const {
