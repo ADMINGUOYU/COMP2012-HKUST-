@@ -111,21 +111,47 @@ void BookList::removeBook(Book *book)
         alreadyHave->changeInventoryCount(-1);
         if (0 == alreadyHave->getInventoryCount())
         {
-            //No book left
+            //No book left -> the original code here cause segmentation fault
+            // Node* tmp = this->head;
+            // while ((nullptr != tmp->next) && (alreadyHave != tmp->next->data))
+            // { tmp = tmp->next; }
+            // if (nullptr == tmp->next->next)
+            // {
+            //     //the tail
+            //     delete tmp->next;
+            //     tmp->next = nullptr;
+            // }
+            // else if (tmp == this->head)
+            // {
+            //     //the head
+            //     this->head = tmp->next;
+            //     delete tmp;
+            // }
+            // else
+            // {
+            //     //in the middle
+            //     Node* to_delete = tmp->next;
+            //     tmp->next = tmp->next->next;
+            //     delete to_delete;
+            // }
+
+            // corrected code
             Node* tmp = this->head;
-            while ((nullptr != tmp->next) && (alreadyHave != tmp->next->data))
+            if (tmp->data == alreadyHave)
+            {
+                //the head
+                this->head = tmp->next;
+                delete tmp;
+                return;
+            }
+            while ((nullptr != tmp->next->next) && (alreadyHave != tmp->next->data))
             { tmp = tmp->next; }
             if (nullptr == tmp->next->next)
             {
                 //the tail
                 delete tmp->next;
                 tmp->next = nullptr;
-            }
-            else if (tmp == this->head)
-            {
-                //the head
-                this->head = tmp->next;
-                delete tmp;
+                return;
             }
             else
             {
@@ -133,6 +159,7 @@ void BookList::removeBook(Book *book)
                 Node* to_delete = tmp->next;
                 tmp->next = tmp->next->next;
                 delete to_delete;
+                return;
             }
         }
     }
