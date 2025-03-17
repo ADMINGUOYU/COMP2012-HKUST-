@@ -1,0 +1,8 @@
+Please input test case number: 5
+
+Loaded parameters from file: data/bearish_low_vol.txt
+Initial Price: 100, Volatility: 0.15, Expected Yearly Return: -0.8, Num of Trading Days: 252, Seed: 999
+Loaded 252 price entries.
+Best strategy: Trend_5_30
+Best return: 0.118
+Test case 5 done
