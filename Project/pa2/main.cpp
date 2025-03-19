@@ -153,21 +153,21 @@ int main()
 
         // Generate and add strategies using separate functions
         WeightedTrendFollowingStrategy **weightedStrategies = WeightedTrendFollowingStrategy::generateStrategySet("WeightedTrend", 5, 15, 5, 20, 50, 10);
-        for (int i = 0; i < 10; ++i)
+        for (int i = 0; i < 12; ++i)
         {
             tradingBot->addStrategy(weightedStrategies[i]);
         }
         delete[] weightedStrategies;
 
         TrendFollowingStrategy **trendStrategies = TrendFollowingStrategy::generateStrategySet("Trend", 5, 15, 5, 20, 100, 10);
-        for (int i = 0; i < 9 * 3 + 1; ++i)
+        for (int i = 0; i < 27; ++i)
         {
             tradingBot->addStrategy(trendStrategies[i]);
         }
         delete[] trendStrategies;
 
         MeanReversionStrategy **meanReversionStrategies = MeanReversionStrategy::generateStrategySet("MeanReversion", 5, 15, 5, 1, 5, 1);
-        for (int i = 0; i < 16; ++i)
+        for (int i = 0; i < 15; ++i)
         {
             tradingBot->addStrategy(meanReversionStrategies[i]);
         }
@@ -194,21 +194,21 @@ int main()
 
         // Generate and add strategies using separate functions
         WeightedTrendFollowingStrategy **weightedStrategies = WeightedTrendFollowingStrategy::generateStrategySet("WeightedTrend", 5, 15, 5, 20, 50, 10);
-        for (int i = 0; i < 10; ++i)
+        for (int i = 0; i < 12; ++i)
         {
             tradingBot->addStrategy(weightedStrategies[i]);
         }
         delete[] weightedStrategies;
 
         TrendFollowingStrategy **trendStrategies = TrendFollowingStrategy::generateStrategySet("Trend", 5, 15, 5, 20, 100, 10);
-        for (int i = 0; i < 9 * 3 + 1; ++i)
+        for (int i = 0; i < 27; ++i)
         {
             tradingBot->addStrategy(trendStrategies[i]);
         }
         delete[] trendStrategies;
 
         MeanReversionStrategy **meanReversionStrategies = MeanReversionStrategy::generateStrategySet("MeanReversion", 5, 15, 5, 1, 5, 1);
-        for (int i = 0; i < 16; ++i)
+        for (int i = 0; i < 15; ++i)
         {
             tradingBot->addStrategy(meanReversionStrategies[i]);
         }

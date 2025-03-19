@@ -1,0 +1,8 @@
+Please input test case number: 3
+
+Loaded parameters from file: data/bullish_low_vol.txt
+Initial Price: 100, Volatility: 0.15, Expected Yearly Return: 1, Num of Trading Days: 252, Seed: 999
+Loaded 252 price entries.
+Best strategy: Weighted Trend Following 1
+Best return: 58.554
+Test case 3 done

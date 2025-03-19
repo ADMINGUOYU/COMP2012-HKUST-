@@ -4,6 +4,9 @@
 ostream& operator<<(ostream& os, const Vector& a) // Which op[]?
 {
     return (os << '('  << a[0] << " , " << a[1] << ')');
+    // if there is no const version of operator[], then this function cannot call a[x]
+    // as in this function a is a const reference to Vector object
+    // so here, a can only call its member function that is taged 'const'
 }
     
 int main()

@@ -1,37 +1,30 @@
-CC = g++
-CPPFLAGS = -std=c++11 -Wall -g -MMD -MP
-BUILD_DIR = build
-
 SRCS = main.cpp Market.cpp TrendFollowingStrategy.cpp WeightedTrendFollowingStrategy.cpp \
        MeanReversionStrategy.cpp TradingBot.cpp Strategy.cpp Utils.cpp
-OBJS = $(SRCS:%.cpp=$(BUILD_DIR)/%.o)
+OBJS = $(SRCS:.cpp=.o)
 DEPS = $(OBJS:.o=.d)
+
+CXX = g++
+CXXFLAGS = -std=c++11 -Wall -g
 
 # Uncomment the following line to enable sanitizers
 # CXXFLAGS += -fsanitize=address,leak,undefined
 
 ifeq ($(OS),Windows_NT)
-	RM = del
 	EXEC = pa2.exe
+	RM = del
 else
-	RM = rm -f
 	EXEC = pa2
+	RM = rm -f
 endif
 
 all: $(EXEC)
 $(EXEC): $(OBJS)
-	$(CC) -o $@ $^ $(CPPFLAGS)
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
-# Create directory for object files
-$(BUILD_DIR)/%.o: %.cpp
-	@mkdir -p $(BUILD_DIR)
-	$(CC) $(CPPFLAGS) -c $< -o $@
-
-# include dependency files
 -include $(DEPS)
 
-.PHONY: clean
+.cpp.o:
+	$(CXX) $(CXXFLAGS) -MMD -MP -c $<
 
 clean:
-	$(RM) -rf $(BUILD_DIR)
-	$(RM) -f *.o *.d pa2 pa2.exe
+	$(RM) $(EXEC) $(OBJS) $(DEPS)

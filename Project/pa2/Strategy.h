@@ -7,24 +7,32 @@
 using namespace std;
 
 const int EVALUATION_WINDOW = 100;
-class Strategy
-{
-private:
-    string name;
-    // TODO: fill out this part if needed
-
-protected:
-    // TODO: fill out this part if needed
-
-public:
-    // TODO: fill out this part if needed
-};
 
 enum Action
 {
     BUY,
     SELL,
     HOLD
+};
+
+class Strategy
+{
+private:
+    string name;
+    // TODO: fill out this part if needed
+    // Nothing
+protected:
+    // TODO: fill out this part if needed
+    // Nothing
+public:
+    // TODO: fill out this part if needed
+    Strategy();
+    Strategy(const string& name);
+    virtual ~Strategy() = default;  // leave this default for now -> as its inherited classes uses their own default destructor
+    
+    string getName() const;
+    virtual Action decideAction(Market *market, int index, double currentHolding) const = 0;
+    virtual double calculateMovingAverage(Market *market, int index, int window) const;
 };
 
 #endif
