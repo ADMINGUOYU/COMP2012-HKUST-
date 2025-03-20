@@ -116,30 +116,27 @@ Remember to use roundToDecimals to round the prices up to 3 decimal places.
 */
 void Market::simulate() 
 {
-    
-    
     // set the first item
     (*this->prices[0]) = roundToDecimals(this->initialPrice, 3);
+
+    // generate seed if necessary
+    // note that whether to generate ?= -1 is compared in the helper function
+    // not sure the seed needs to be calculated everytime, so~
+    double seedToUse = this->generateZ(this->seed);
+    // calculate the coefficient to work with
+    double coefficient = std::exp
+    (
+        (this->expectedYearlyReturn - (0.5 * std::pow(this->volatility, 2.0))) * (1.0 / TRADING_DAYS_PER_YEAR)
+        +
+        this->volatility * std::sqrt((1.0 / TRADING_DAYS_PER_YEAR)) * seedToUse
+    );
 
     // loop through
     for (int i = 1; i < this->numTradingDays; i++)
     {
-        // generate seed if necessary
-        // note that whether to generate ?= -1 is compared in the helper function
-        // not sure the seed needs to be calculated everytime, so~
-        double seedToUse = this->generateZ(this->seed);
-
-        // calculate the coefficient to work with
-        double coefficient = std::exp
-        (
-            (this->expectedYearlyReturn - (0.5 * std::pow(this->volatility, 2.0))) * (1.0 / TRADING_DAYS_PER_YEAR)
-            +
-            this->volatility * std::sqrt((1.0 / TRADING_DAYS_PER_YEAR)) * seedToUse
-        );
-
         // calculate the next day
         (*this->prices[i]) = roundToDecimals(((*this->prices[i - 1]) * coefficient), 3);
-        }
+    }
 
     // return
     return;

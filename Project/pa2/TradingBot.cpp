@@ -87,7 +87,9 @@ SimulationResult TradingBot::runSimulation()
         Strategy* strategy = this->availableStrategies[i];
         double currentHolding = static_cast<double>(false);
         /* note that this is the same as remembering the last price */
-        for (int j = 0; j < this->market->getNumTradingDays(); j++)
+        /* note that the instructions has changed to "calculate last 101 days" */
+        /* this part is hard coded */
+        for (int j = this->market->getNumTradingDays() - 101; j < this->market->getNumTradingDays(); j++)
         {
             // for each trading day
             switch (strategy->decideAction(this->market, j, currentHolding))
