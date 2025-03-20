@@ -111,48 +111,21 @@ void BookList::removeBook(Book *book)
         alreadyHave->changeInventoryCount(-1);
         if (0 == alreadyHave->getInventoryCount())
         {
-            // No book left -> the original code here cause segmentation fault
-            Node* tmp = this->head;
-            while ((nullptr != tmp->next) && (alreadyHave != tmp->next->data))
-            { tmp = tmp->next; }
-            if (tmp == this->head)
-            {
-                //the head
-                /* corrected on the original -> test 'head' first */
-                this->head = tmp->next;
-                delete tmp;
-            }
-            else if (nullptr == tmp->next->next)
-            {
-                //the tail
-                delete tmp->next;
-                tmp->next = nullptr;
-            }
-            else
-            {
-                //in the middle
-                Node* to_delete = tmp->next;
-                tmp->next = tmp->next->next;
-                delete to_delete;
-            }
-
-            // // corrected code
+            //No book left -> the original code here cause segmentation fault
             // Node* tmp = this->head;
-            // if (tmp->data == alreadyHave)
-            // {
-            //     //the head
-            //     this->head = tmp->next;
-            //     delete tmp;
-            //     return;
-            // }
-            // while ((nullptr != tmp->next->next) && (alreadyHave != tmp->next->data))
+            // while ((nullptr != tmp->next) && (alreadyHave != tmp->next->data))
             // { tmp = tmp->next; }
             // if (nullptr == tmp->next->next)
             // {
             //     //the tail
             //     delete tmp->next;
             //     tmp->next = nullptr;
-            //     return;
+            // }
+            // else if (tmp == this->head)
+            // {
+            //     //the head
+            //     this->head = tmp->next;
+            //     delete tmp;
             // }
             // else
             // {
@@ -160,8 +133,34 @@ void BookList::removeBook(Book *book)
             //     Node* to_delete = tmp->next;
             //     tmp->next = tmp->next->next;
             //     delete to_delete;
-            //     return;
             // }
+
+            // corrected code
+            Node* tmp = this->head;
+            if (tmp->data == alreadyHave)
+            {
+                //the head
+                this->head = tmp->next;
+                delete tmp;
+                return;
+            }
+            while ((nullptr != tmp->next->next) && (alreadyHave != tmp->next->data))
+            { tmp = tmp->next; }
+            if (nullptr == tmp->next->next)
+            {
+                //the tail
+                delete tmp->next;
+                tmp->next = nullptr;
+                return;
+            }
+            else
+            {
+                //in the middle
+                Node* to_delete = tmp->next;
+                tmp->next = tmp->next->next;
+                delete to_delete;
+                return;
+            }
         }
     }
 
