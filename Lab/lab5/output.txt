@@ -1,0 +1,17 @@
+All vehicles in the factory:
+Combustion Vehicle: BYD Qin, Year of Production: 2023, Price: 120000 hkd, Fuel Consumption: 5.8 liters/100km, Emission Level: 6
+Combustion Vehicle: Toyota RAV4, Year of Production: 2022, Price: 220000 hkd, Fuel Consumption: 7.2 liters/100km, Emission Level: 5
+Electric Vehicle: Tesla Model 3, Year of Production: 2023, Price: 280000 hkd, Battery Capacity: 60kWh, Range: 550km
+Electric Vehicle: BYD K9, Year of Production: 2021, Price: 200000 hkd, Battery Capacity: 350kWh, Range: 300km
+
+Combustion vehicles in the factory:
+Combustion Vehicle: BYD Qin, Year of Production: 2023, Price: 120000 hkd, Fuel Consumption: 5.8 liters/100km, Emission Level: 6
+Combustion Vehicle: Toyota RAV4, Year of Production: 2022, Price: 220000 hkd, Fuel Consumption: 7.2 liters/100km, Emission Level: 5
+
+Electric vehicles in the factory:
+Electric Vehicle: Tesla Model 3, Year of Production: 2023, Price: 280000 hkd, Battery Capacity: 60kWh, Range: 550km
+Electric Vehicle: BYD K9, Year of Production: 2021, Price: 200000 hkd, Battery Capacity: 350kWh, Range: 300km
+
+Total cost of combustion vehicles: 355600 hkd
+Total cost of electric vehicles: 499136 hkd
+Total cost of all vehicles: 854736 hkd

@@ -43,5 +43,15 @@ class ElectricVehicle : public Vehicle {
 // 3. A function getRange() that returns the range.
 // 4. A function displayInfo() that displays the information of the electric vehicle.
 // 5. A function calculateCost() that calculates the cost of the electric vehicle. The cost should be calculated by multiplying the price of the vehicle by the range of the vehicle.
+private:
+    int batteryCapacity;
+    int range;
+public:
+    ElectricVehicle(const string& model, double price, int yearOfProduction, 
+                      int batteryCapacity, int range);
+    int getBatteryCapacity() const { return this->batteryCapacity; }
+    int getRange() const { return this->range; }
+    virtual void displayInfo() const override;
+    virtual double calculateCost() const override;
 };
 #endif /* VEHICLE_H */ 

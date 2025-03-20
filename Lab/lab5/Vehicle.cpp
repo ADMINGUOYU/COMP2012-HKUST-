@@ -1,16 +1,26 @@
 #include "Vehicle.h"
 using namespace std;
 // ====== Vehicle class implementation ======
-Vehicle::Vehicle(const string& model, double price, int yearOfProduction) {
+Vehicle::Vehicle(const string& model, double price, int yearOfProduction) 
+    :
+    model(model),
+    price(price),
+    yearOfProduction(yearOfProduction)
+{
     // Todo 1: Implement the Vehicle constructor
-
+    return;
 }
 
 // ====== CombustionVehicle class implementation======
-CombustionVehicle::CombustionVehicle(const string& model, double price, int yearOfProduction, 
-                                    double fuelConsumption, int emissionLevel) {
+CombustionVehicle::CombustionVehicle
+(const string& model, double price, int yearOfProduction, double fuelConsumption, int emissionLevel) 
+    :
+    Vehicle(model, price, yearOfProduction),
+    fuelConsumption(fuelConsumption),
+    emissionLevel(emissionLevel)
+{
     // Todo 2.1: Implement the CombustionVehicle constructor
-    
+    return;
 }
 
 
@@ -27,10 +37,16 @@ double CombustionVehicle::calculateCost() const {
 }
 
 // ====== ElectricVehicle class implementation======
-ElectricVehicle::ElectricVehicle(const string& model, double price, int yearOfProduction,
-                               int batteryCapacity, int range) {
+ElectricVehicle::ElectricVehicle
+(const string& model, double price, int yearOfProduction, int batteryCapacity, int range) 
+    :
+    Vehicle(model, price, yearOfProduction),
+    batteryCapacity(batteryCapacity),
+    range(range)
+{
     // Todo 2.2: Implement the ElectricVehicle constructor
     // Make sure to call the base class constructor and initialize additional data members
+    return;
 }
 
 void ElectricVehicle::displayInfo() const {
@@ -43,5 +59,6 @@ double ElectricVehicle::calculateCost() const {
     // Assume electricity price is 1 hkd/kWh, annual driving distance is 15000 km
     // Calculate and return the total cost (price + annual electricity costs), noted that for simplicity, we just need to add one year electricity cost
     // The calculation formula is : yearlyElectricityCost = (batteryCapacity * 1.0 * 15000) / range
-    return 0; // Replace with your implementation
+    double yearlyElectricityCost = (batteryCapacity * 1.0 * 15000) / range;
+    return (this->price + yearlyElectricityCost);
 } 
