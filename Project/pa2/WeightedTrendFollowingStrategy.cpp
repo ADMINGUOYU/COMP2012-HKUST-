@@ -26,7 +26,7 @@ starting with a weight of 1.0, and iteratively multiplying the weight by the gro
 ensuring that more recent prices have a greater influence on the moving average.
 */
 double WeightedTrendFollowingStrategy::calculateExponentialWeight(int index) const
-{ return (1.0 * pow(1.1, index)); }
+{ return (1.0 * std::pow(1.1, index)); }
 
 /*
 The `WeightedTrendFollowingStrategy` class overrides this function from the base Strategy class. 
@@ -76,7 +76,7 @@ WeightedTrendFollowingStrategy **WeightedTrendFollowingStrategy::generateStrateg
     {
         // we assume it is dividable (i is the counter)
         for (int wndLng = minLongWindow; wndLng <= maxLongWindow; wndLng += stepLongWindow)
-            toReturn[i++] = new WeightedTrendFollowingStrategy(baseName + "_" + to_string(wndSrt) + "_" + to_string(wndLng), wndSrt, wndLng);
+            toReturn[i++] = new WeightedTrendFollowingStrategy(baseName + "_" + std::to_string(wndSrt) + "_" + std::to_string(wndLng), wndSrt, wndLng);
     }
     
     // return the pointer

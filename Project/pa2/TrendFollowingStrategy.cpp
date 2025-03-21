@@ -75,7 +75,7 @@ TrendFollowingStrategy **TrendFollowingStrategy::generateStrategySet(const strin
     {
         // we assume it is dividable (i is the counter)
         for (int wndLng = minLongWindow; wndLng <= maxLongWindow; wndLng += stepLongWindow)
-            toReturn[i++] = new TrendFollowingStrategy(baseName + "_" + to_string(wndSrt) + "_" + to_string(wndLng), wndSrt, wndLng);
+            toReturn[i++] = new TrendFollowingStrategy(baseName + "_" + std::to_string(wndSrt) + "_" + std::to_string(wndLng), wndSrt, wndLng);
     }
     
     // return the pointer

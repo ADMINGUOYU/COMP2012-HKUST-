@@ -82,7 +82,7 @@ MeanReversionStrategy **MeanReversionStrategy::generateStrategySet(const string 
     {
         // we assume it is dividable (i is the counter)
         for (int thres = minThreshold; thres <= maxThreshold; thres += thresholdStep)
-            toReturn[i++] = new MeanReversionStrategy(baseName + "_" + to_string(wnd) + "_" + to_string(thres), wnd, thres);
+            toReturn[i++] = new MeanReversionStrategy(baseName + "_" + std::to_string(wnd) + "_" + std::to_string(thres), wnd, thres);
     }
     
     // return the pointer
