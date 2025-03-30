@@ -33,54 +33,7 @@ Market::Market(const string &filename)
     prices(nullptr),
     seed(-1)
 {
-
-    /* 
-    partially copied code from the member function 
-    we don't want to delete the thing that does not exist
-    */
-
-    string filePath = "data/" + filename;
-    ifstream inFile(filePath);
-    if (!inFile)
-    {
-        cerr << "Error opening file for reading: " << filePath << endl;
-        return;
-    }
-
-    inFile >> initialPrice >> volatility >> expectedYearlyReturn >> numTradingDays >> seed;
-
-    // Count number of prices first
-    ifstream countFile(filePath);
-    string line;
-    int count = 0;
-    double dummy;
-    countFile >> dummy >> dummy >> dummy >> dummy >> dummy; // Skip parameters
-    while (countFile >> dummy)
-        count++;
-    countFile.close();
-
-    // Allocate new array
-    prices = new double *[count];
-    for (int i = 0; i < count; i++)
-    {
-        prices[i] = new double(0.0);
-    }
-
-    // Read prices
-    int pricesSize = 0;
-    double price;
-    while (inFile >> price)
-    {
-        *prices[pricesSize++] = price;
-    }
-
-    inFile.close();
-    cout << "Loaded parameters from file: " << filePath << endl;
-    cout << "Initial Price: " << initialPrice << ", Volatility: " << volatility
-         << ", Expected Yearly Return: " << expectedYearlyReturn
-         << ", Num of Trading Days: " << numTradingDays << ", Seed: " << seed << endl;
-    cout << "Loaded " << pricesSize << " price entries." << endl;
-
+    this->loadFromFile(filename);
     return;
 }
 
