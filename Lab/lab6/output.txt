@@ -1,0 +1,26 @@
+[--- Items Created ---]
+  Sword of Flames (Value: 100, Weight: 5)
+  Shield of Thunder (Value: 80, Weight: 7)
+  Healing Potion (Value: 25, Weight: 1)
+  Gold Coin (Value: 1.5, Weight: 0.01)
+  Shiny Diamond (Value: 500.99, Weight: 0.2)
+
+[--- Item Operator Tests ---]
+  Sword + Shield => Sword of Flames (Value: 180, Weight: 12)
+  Sword * 2 => Sword of Flames (Value: 200, Weight: 10)
+  Gold + Diamond => Gold Coin (Value: 502.49, Weight: 0.21)
+  Gold * 2.0 => Gold Coin (Value: 3, Weight: 0.02)
+  Sword<int> + Gold<double> => Sword of Flames (Value: 101.5, Weight: 5.01)
+  Diamond<double> + Shield<int> => Shiny Diamond (Value: 580.99, Weight: 7.2)
+  Shield<int> * 2.5 => Shield of Thunder (Value: 200, Weight: 17.5)
+  Diamond<double> * 3 => Shiny Diamond (Value: 1502.97, Weight: 0.6)
+
+[--- Inventory Tests ---]
+  inv1 => [Sword of Flames (Value: 100, Weight: 5), Shield of Thunder (Value: 80, Weight: 7)]
+  inv2 => [Healing Potion (Value: 25, Weight: 1)]
+  inv3 => [Bow (Value: 90, Weight: 4), Arrows (Value: 1, Weight: 0)]
+  merged = inv1 + inv2 => [Sword of Flames (Value: 100, Weight: 5), Shield of Thunder (Value: 80, Weight: 7), Healing Potion (Value: 25, Weight: 1)]
+  inv = inv1 + inv2 + inv3 => [Sword of Flames (Value: 100, Weight: 5), Shield of Thunder (Value: 80, Weight: 7), Healing Potion (Value: 25, Weight: 1), Bow (Value: 90, Weight: 4), Arrows (Value: 1, Weight: 0)]
+  copy = inv1 => [Sword of Flames (Value: 100, Weight: 5), Shield of Thunder (Value: 80, Weight: 7)]
+
+[--- All Tests Completed ---]
