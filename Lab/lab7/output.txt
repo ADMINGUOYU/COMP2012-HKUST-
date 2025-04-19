@@ -1,0 +1,40 @@
+Start processing binary search tree 1.
+Create the tree 1 with SID 202501 with score 60.
+Try to insert SID 202502 with score 75:
+Inserted successfully.
+Try to insert SID 202503 with score 55:
+Inserted successfully.
+Try to insert SID 202504 with score 65:
+Inserted successfully.
+Try to insert SID 202505 with score 80:
+Inserted successfully.
+Check the info with Score 100: 
+Student not found.
+Check the info with Score 80: 
+Student Info: [SID: 202505, Score: 80].
+Print students by ascending order.
+Student Info: [SID: 202503, Score: 55].
+Student Info: [SID: 202501, Score: 60].
+Student Info: [SID: 202504, Score: 65].
+Student Info: [SID: 202502, Score: 75].
+Student Info: [SID: 202505, Score: 80].
+End processing binary search tree 1.
+
+Start processing binary search tree 2.
+Create the tree by copying tree 1.
+Try to insert SID 202506 with score 90:
+Inserted successfully.
+Try to insert SID 202503 with score 55:
+Skipping due to a duplicate.
+Print students by ascending order.
+Student Info: [SID: 202503, Score: 55].
+Student Info: [SID: 202501, Score: 60].
+Student Info: [SID: 202504, Score: 65].
+Student Info: [SID: 202502, Score: 75].
+Student Info: [SID: 202505, Score: 80].
+Student Info: [SID: 202506, Score: 90].
+Print students with score below 75.
+Student Info: [SID: 202503, Score: 55].
+Student Info: [SID: 202501, Score: 60].
+Student Info: [SID: 202504, Score: 65].
+End processing binary search tree 2.
