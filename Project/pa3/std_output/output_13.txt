@@ -1,0 +1,5 @@
+Test Case 13: Part III - Testing addPrimitiveColumn of Table
+--------------------------------------------------
+{
+	name: "No Name"
+}

@@ -1,0 +1,12 @@
+Test Case 17: Part III - Testing operator= of Table
+--------------------------------------------------
+{
+	pa3_id: 1
+	tags: ["UwU"]
+	time: "2023-10-01"
+},
+{
+	pa3_id: 2
+	tags: ["=w=", "UwU"]
+	time: "No time"
+}

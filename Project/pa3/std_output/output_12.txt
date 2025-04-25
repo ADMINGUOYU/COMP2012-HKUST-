@@ -1,0 +1,3 @@
+Test Case 12: Part III - Testing constructor of Table
+--------------------------------------------------
+Table is empty.

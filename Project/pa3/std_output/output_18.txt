@@ -1,0 +1,7 @@
+Test Case 18: Part III - Testing operator== of Table::Filter
+--------------------------------------------------
+{
+	pa3_id: 2
+	tags: ["=w=", "UwU"]
+	time: "No time"
+}

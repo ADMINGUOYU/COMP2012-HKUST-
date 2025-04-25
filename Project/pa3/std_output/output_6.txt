@@ -1,0 +1,3 @@
+Test Case 6: Part II - Testing insert of BST
+--------------------------------------------------
+Can insert the same element: false

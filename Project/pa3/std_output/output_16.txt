@@ -1,0 +1,12 @@
+Test Case 16: Part III - Testing copy constructor of Table
+--------------------------------------------------
+{
+	pa3_id: 1
+	tags: ["UwU"]
+	time: "2023-10-01"
+},
+{
+	pa3_id: 2
+	tags: ["=w=", "UwU"]
+	time: "No time"
+}

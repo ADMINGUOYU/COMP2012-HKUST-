@@ -1,0 +1,3 @@
+Test Case 7: Part II - Testing exists of BST
+--------------------------------------------------
+"MyGo!!!!!" exists in the HashTable: true

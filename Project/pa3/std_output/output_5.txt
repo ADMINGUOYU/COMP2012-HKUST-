@@ -1,0 +1,3 @@
+Test Case 5: Part II - Testing constructor of HashTable
+--------------------------------------------------
+Size of HashTable: 0

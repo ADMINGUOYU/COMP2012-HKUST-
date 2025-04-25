@@ -1,0 +1,3 @@
+Test Case 8: Part II - Testing remove of BST
+--------------------------------------------------
+"Sumimi" exists in the HashTable after removal: false

@@ -1,0 +1,6 @@
+Test Case 10: Part III - Testing handleAddEntryToIndexTree of PrimitiveField
+--------------------------------------------------
+Size of index tree: 1
+
+COMP2012 gets added to index tree: true
+Size of the HashTable under the key COMP2012: 1

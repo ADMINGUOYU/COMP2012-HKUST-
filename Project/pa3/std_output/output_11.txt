@@ -1,0 +1,9 @@
+Test Case 11: Part III - Testing handleAddEntryToIndexTree of ListField
+--------------------------------------------------
+Size of index tree: 2
+
+Saki gets added to index tree: true
+Size of the HashTable under the key Saki: 1
+
+Haruhikage gets added to index tree: true
+Size of the HashTable under the key Haruhikage: 1
