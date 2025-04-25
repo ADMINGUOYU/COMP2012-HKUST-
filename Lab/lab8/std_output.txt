@@ -1,0 +1,60 @@
+===== Game session 1: Start ========
+Using Linear Probing CR
+Loading words...
+Loading words finished.
+Query "hello": Found (probes: 1, score: 1)
+Query "onion": Found (probes: 1, score: 2)
+Query "never": Found (probes: 1, score: 3)
+Query "reset": Found (probes: 1, score: 4)
+Query "tiger": Found (probes: 2, score: 5)
+Query "reach": Found (probes: 1, score: 6)
+Query "honey": Found (probes: 1, score: 7)
+Query "yield": Found (probes: 1, score: 8)
+Query "demon": Found (probes: 1, score: 9)
+Query "night": Found (probes: 1, score: 10)
+===== Game session 1: Finished =====
+===== Game session 2: Start ========
+Using Linear Probing CR
+Loading words...
+Loading words finished.
+Query "world": Found (probes: 1, score: 1)
+Query "diner": Found (probes: 1, score: 2)
+Query "route": Found (probes: 1, score: 3)
+Query "err": Invalid word (score: 0)
+Query "error": Found (probes: 2, score: 1)
+Query "round": Found (probes: 1, score: 2)
+Query "diner": Not found (probes: 8, score: 0)
+Query "delay": Found (probes: 1, score: 1)
+Query "yield": Found (probes: 1, score: 2)
+Query "belly": Invalid word (score: 0)
+===== Game session 2: Finished =====
+===== Game session 3: Start ========
+Using Quadratic Probing CR
+Loading words...
+Loading words finished.
+Query "happy": Found (probes: 1, score: 1)
+Query "young": Found (probes: 1, score: 2)
+Query "great": Found (probes: 1, score: 3)
+Query "throw": Found (probes: 1, score: 4)
+Query "whose": Found (probes: 1, score: 5)
+Query "exist": Found (probes: 1, score: 6)
+Query "tense": Found (probes: 1, score: 7)
+Query "exact": Found (probes: 1, score: 8)
+Query "teach": Found (probes: 1, score: 9)
+Query "house": Found (probes: 1, score: 10)
+===== Game session 3: Finished =====
+===== Game session 4: Start ========
+Using Quadratic Probing CR
+Loading words...
+Loading words finished.
+Query "dizzy": Found (probes: 1, score: 1)
+Query "young": Found (probes: 1, score: 2)
+Query "grate": Found (probes: 1, score: 3)
+Query "essay": Found (probes: 1, score: 4)
+Query "youth": Found (probes: 2, score: 5)
+Query "hetch": Not found (probes: 10, score: 0)
+Query "hatch": Found (probes: 1, score: 1)
+Query "hound": Found (probes: 2, score: 2)
+Query "dizzy": Not found (probes: 4, score: 0)
+Query "young": Invalid word (score: 0)
+===== Game session 4: Finished =====
