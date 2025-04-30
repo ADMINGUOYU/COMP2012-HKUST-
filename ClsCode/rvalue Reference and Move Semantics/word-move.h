@@ -12,6 +12,11 @@ class Word
         { strcpy(str, s); cout << "conversion: "; print(); }
     Word(const Word& w) : freq(w.freq+1), str(new char [strlen(w.str)+1])
         { strcpy(str, w.str); cout << "copy: "; print(); }
+    /*
+    Move constructor takes the resources from the old object
+    REMEMBER to reset the pointers of the temporary object
+    otherwise, the normal destruction process of the temporary object will delete that memory
+    */
     Word(Word&& w) : freq(w.freq), str(w.str)    // Move constructor
         { w.freq = 0; w.str = nullptr; cout << "move: "; print(); }
     ~Word() { cout << "destructor: "; print(); delete [] str; }

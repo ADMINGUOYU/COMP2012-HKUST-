@@ -2,6 +2,20 @@
 void print_word(const Word& w) { cout << "print const Word&: "; w.print(); }
 void print_word(Word&& w) { cout << "print Word&&: "; w.print(); }
 
+/*
+Word const && w -> is allowed
+But basically it does the same thing as -> Word const & w
+-> both have the capability of taking temporary objects
+-> and both do not have to capability to modify the object
+
+* if Word const && w is used -> it WILL be a better match than Word const & w
+*/
+
+/*
+temporary object match: (sequence)
+&& -> const && -> const &
+*/
+
 int main()
 {
     /* Use const Word& to hold a temporary Word object */
