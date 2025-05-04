@@ -15,10 +15,12 @@ class Vector
 
 Vector Vector::operator+(const Vector& b) const
 {   // Return by value; any copy constructor?
+    // -> yes (refer to temporary objects)
+    // -> assume no copy elision applied
     return Vector(x + b.x, y + b.y);
 }
 const Vector& Vector::operator+=(const Vector& b)
 {
     x += b.x; y += b.y;
-    return *this; // Return by const reference. Why?
+    return *this; // Return by const reference. Why? -> rvalue only
 }

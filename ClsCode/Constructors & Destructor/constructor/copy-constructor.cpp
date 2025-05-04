@@ -17,8 +17,8 @@ class Word
 
 int main() 
 {
-    Word movie("Titanic");       // which constructor?
-    Word song(movie);            // which constructor?
-    Word ship = movie;           // which constructor?
-    Word actress {"Kate"};       // which constructor?
+    Word movie("Titanic");       // which constructor? -> conversion
+    Word song(movie);            // which constructor? -> copy
+    Word ship = movie;           // which constructor? -> copy
+    Word actress {"Kate"};       // which constructor? -> conversion
 }

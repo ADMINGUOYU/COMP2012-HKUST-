@@ -14,6 +14,6 @@ class Word
 
 int main() 
 { 
-    Word movie;         // Which constructor?
-    movie.set();        // Which set function?
+    Word movie;         // Which constructor? -> the default one (the one that can take no argument)
+    movie.set();        // Which set function? -> void set() const;
 }

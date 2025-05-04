@@ -18,5 +18,5 @@ const Vector& Vector::operator=(const Vector& b)
         x = b.x;
         y = b.y;
     }
-    return *this; // Why return const Vector& ?
+    return *this; // Why return const Vector& ? -> rvalue only (for cascading)
 };

@@ -13,3 +13,10 @@ class Word
 };
 
 int main() { Word x("hkust"); }
+
+/*
+error: constructor for Word must explicitly initialize the const member 'lang'
+-> constants must be initialize (be assigned) once created.
+-> default value OR MIL
+-> you cannot assign to it after its construction.
+*/

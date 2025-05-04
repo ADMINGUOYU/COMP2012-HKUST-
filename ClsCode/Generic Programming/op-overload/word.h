@@ -6,6 +6,8 @@ class Word              /* File: word.h */
         { str = new char[strlen(s)+1]; strcpy(str,s); }
   public:
     // The following str{nullptr} is necessary. Why?
+    // -> no matter what operator= will try to delete str
+    // -> delete nullptr is safe
     Word(const Word& w): str{nullptr} { cout << "Copy: "; *this = w; }
     Word(const char* s, int k = 1) : freq(k) 
         { cout << "Conversion: from \"" << s << "\"\n"; setstr(s); }

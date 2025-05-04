@@ -18,7 +18,19 @@ class Word              // Modified from copy-constructor.cpp
 
 int main() 
 {
-    Word movie("Titanic"); movie.print(); // which constructor?
-    Word song(movie); song.print();       // which constructor?
-    Word ship = movie; ship.print();      // which constructor?
+    Word movie("Titanic"); movie.print(); // which constructor? -> conversion
+    Word song(movie); song.print();       // which constructor? -> copy (first delegated to conversion)
+    Word ship = movie; ship.print();      // which constructor? -> copy (first delegated to conversion)
 }
+
+/*
+OUTPUT:
+conversion
+Titanic : 1
+conversion
+copy
+Titanic : 1
+conversion
+copy
+Titanic : 1
+*/
