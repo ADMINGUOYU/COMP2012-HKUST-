@@ -43,7 +43,7 @@ class BST : public BaseBST {
         BST() : root(nullptr), count(0) {}
         
         // Copy constructor
-        BST(const BST& other) : root(nullptr) {
+        BST(const BST& other) : root(nullptr), count(other.count) {
             copyTree(root, other.root);
         }
 
@@ -56,6 +56,7 @@ class BST : public BaseBST {
         BST& operator=(const BST& other) {
             if (this != &other) {
                 clear();
+                count = other.count;
                 copyTree(root, other.root);
             }
             return *this;
