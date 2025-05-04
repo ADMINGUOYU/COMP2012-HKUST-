@@ -126,7 +126,7 @@ void Table::addEntry(const Entry& entry)
             // but what is the type??? List or primitive
             // that does not matter, just copy the default field to the corresponding entry
             new_entry->setPrimitiveField ????
-            You cannot continue as you do not kno the type.
+            You cannot continue as you do not know the type.
         }
     }
     */
