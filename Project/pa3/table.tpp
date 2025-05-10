@@ -307,8 +307,9 @@ Table Table::Filter<T>::operator==(const T& value) const
     );
 
     // get all entries
-    if ((ptr_to_index_tree)->get(value))
-    for (Entry* const & entry : (ptr_to_index_tree)->get(value)->to_vector())
+    HashTable<Entry*> const* table = (ptr_to_index_tree)->get(value);
+    if (table)
+    for (Entry* const & entry : table->to_vector())
         to_return.addEntry(*entry); // will copy
 
     // return the filtered table
