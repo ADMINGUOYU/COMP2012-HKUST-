@@ -36,6 +36,13 @@ void Table::addPrimitiveColumn(string name, const T& default_value)
     // save the default field to the data member
     this->default_fields.insert(name, new PrimitiveField<T> {name, default_value});
 
+    // check and update existing entries
+    // to improve efficiency, you can record the address while doing "new" above
+    BaseBST * tree = *this->index_trees.get(name);
+    BaseField const * field = *this->default_fields.get(name);
+    for (Entry* & entry : this->entries.to_vector())
+        field->handleAddEntryToIndexTree(tree, entry);
+
     // all done and a new column is added
     // return
     return;
@@ -76,6 +83,13 @@ void Table::addListColumn(string name, const vector<T>& default_value)
 
     // save the default field to the data member
     this->default_fields.insert(name, new ListField<T> {name, default_value});
+
+    // check and update existing entries
+    // to improve efficiency, you can record the address while doing "new" above
+    BaseBST * tree = *this->index_trees.get(name);
+    BaseField const * field = *this->default_fields.get(name);
+    for (Entry* & entry : this->entries.to_vector())
+        field->handleAddEntryToIndexTree(tree, entry);
 
     // all done and a new column is added
     // return
