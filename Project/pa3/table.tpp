@@ -99,12 +99,34 @@ void Table::addEntry(const Entry& entry)
     // maybe we need to re-hash
     // get every field (note that this is a copy)
     // parse every field
+    for (BaseField* const & field : this->default_fields.getInorder())
+    {
+        // fetch the index tree
+        BaseBST** ptr_to_index_tree = this->index_trees.get(field->getName());
+        // retrieve name first (use constant reference to preserve temporary objects, or BaseField** will no longer be valid)
+        BST<string, BaseField*> const & fieldsInEntry = new_entry->getFields();
+        BaseField** const inEntry = fieldsInEntry.get(field->getName());
+        // check if the column exists
+        if (inEntry)
+        {
+            // found
+            (*inEntry)->handleAddEntryToIndexTree((*ptr_to_index_tree), new_entry);
+        }
+        else
+        {
+            // not found -> use the default
+            field->handleAddEntryToIndexTree((*ptr_to_index_tree), new_entry);
+        }
+    }
+
+    /* This code will not add entry to index_tree if the field does not exist
     for (BaseField* const & field : new_entry->getFields().getInorder())
     {
         BaseBST** ptr_to_index_tree = this->index_trees.get(field->getName());
         // note that this uses dynamic binding
         field->handleAddEntryToIndexTree((*ptr_to_index_tree), new_entry);
     }
+    */
 
     // done and return
     return;
@@ -285,6 +307,7 @@ Table Table::Filter<T>::operator==(const T& value) const
     );
 
     // get all entries
+    if ((ptr_to_index_tree)->get(value))
     for (Entry* const & entry : (ptr_to_index_tree)->get(value)->to_vector())
         to_return.addEntry(*entry); // will copy
 
