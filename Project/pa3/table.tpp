@@ -40,7 +40,7 @@ void Table::addPrimitiveColumn(string name, const T& default_value)
     // to improve efficiency, you can record the address while doing "new" above
     BaseBST * tree = *this->index_trees.get(name);
     BaseField const * field = *this->default_fields.get(name);
-    for (Entry* & entry : this->entries.to_vector())
+    for (Entry* const & entry : this->entries.to_vector())
         field->handleAddEntryToIndexTree(tree, entry);
 
     // all done and a new column is added
@@ -88,7 +88,7 @@ void Table::addListColumn(string name, const vector<T>& default_value)
     // to improve efficiency, you can record the address while doing "new" above
     BaseBST * tree = *this->index_trees.get(name);
     BaseField const * field = *this->default_fields.get(name);
-    for (Entry* & entry : this->entries.to_vector())
+    for (Entry* const & entry : this->entries.to_vector())
         field->handleAddEntryToIndexTree(tree, entry);
 
     // all done and a new column is added
