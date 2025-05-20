@@ -110,6 +110,8 @@ void Table::addEntry(const Entry& entry)
     // don't need to duplicate the fields as Entry has already done for us
     this->entries.insert(new_entry);
 
+    // retrieve fields first (use constant reference to preserve temporary objects, or BaseField** will no longer be valid)
+    BST<string, BaseField*> const & fieldsInEntry = new_entry->getFields();
     // maybe we need to re-hash
     // get every field (note that this is a copy)
     // parse every field
@@ -117,8 +119,7 @@ void Table::addEntry(const Entry& entry)
     {
         // fetch the index tree
         BaseBST** ptr_to_index_tree = this->index_trees.get(field->getName());
-        // retrieve name first (use constant reference to preserve temporary objects, or BaseField** will no longer be valid)
-        BST<string, BaseField*> const & fieldsInEntry = new_entry->getFields();
+        // look for that column (if it exists)
         BaseField** const inEntry = fieldsInEntry.get(field->getName());
         // check if the column exists
         if (inEntry)
