@@ -75,9 +75,14 @@ HashTable<T>& HashTable<T>::operator=(const HashTable<T>& other)
     this->head_node = this->cur_node = new TableNode{ };
     while (true)
     {
+        // assign table(node) parameters
         this->cur_node->table_size = workingPtr_other->table_size;
         this->cur_node->exponent_size = workingPtr_other->exponent_size;
-        this->cur_node->table = new std::vector<T>[1 << this->cur_node->exponent_size] {*(workingPtr_other->table)};
+        // create new array of vectors
+        this->cur_node->table = new std::vector<T>[1 << this->cur_node->exponent_size] { };
+        // copy every sub-vector
+        for (int i = 0; i < (1 << this->cur_node->exponent_size); i++) this->cur_node->table[i] = workingPtr_other->table[i];
+        // go to next table (node)
         if (workingPtr_other->next)
         {
             this->cur_node = (this->cur_node->next = new TableNode{ });
