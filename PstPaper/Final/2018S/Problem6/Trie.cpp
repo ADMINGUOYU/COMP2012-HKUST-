@@ -66,6 +66,12 @@ void Trie::printAll(const TrieNode *n, char *partialWord, int len) const
         if (node = n->getChild((int)i))
         {
             // create a copy of partialWord (for its child to use)
+            /*
+            If you don't want to copy, you can reuse the buffer
+            By cleverly update 'len'
+            as 'len' only grows
+            the tailing garbage data will not be printed after '\0' is added
+            */
             char partialWord_cpy[MAX_WORD_LENGTH];
             // not a valid cstring, have to copy manually
             for (int j = 0; j < len; j++)
